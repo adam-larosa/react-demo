@@ -36,7 +36,7 @@ const Child = ( props ) => {
 		<div>
 			{/*          event object                                       
 			                   |                      passing the event object
-			                   |                    "up the beanstalk" to it is
+			                   |                    "up the beanstalk" so it is
 							   |					in scope where the funciton
 						       |						is defined
 			                   |                             |          
