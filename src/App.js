@@ -6,25 +6,52 @@ function App() {
 
 	const [ number, setNumber ] = useState( 0 )
 
-	const increment = () => setNumber( number + 1 )
+
+	/* passing this function down to the child component allows us to have 
+	   whatever argument is given in scope here */
+	const increment = (eventObject) => {
+		/* our event object came from the child! */
+		console.log( eventObject )
+		setNumber( number + 1 )
+	}
 
 	return (
 		<div>
-			<Child theNumber={ number }/>
-			<button onClick={ increment }>change number</button>
+			<h1>{ number }</h1>
+			<Child incrementFunction={ increment } />
 		</div>
 	);
 }
 
 
-const Child = ({ theNumber }) => {
+
+
+
+
+/* incrementFunction */
+
+const Child = ( props ) => {
 
 	return (
 		<div>
-			<h1>{ theNumber }</h1>
+			{/*          event object                                       
+			                   |                      passing the event object
+			                   |                    "up the beanstalk" to it is
+							   |					in scope where the funciton
+						       |						is defined
+			                   |                             |          
+							   V							 V		    */}
+			<button onClick={ (e) => props.incrementFunction(e) }>
+				change number
+			</button>
 		</div>
 	)
 }
+
+
+
+
+
 
 
 
