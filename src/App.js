@@ -34,14 +34,14 @@ const Child = ( props ) => {
 
 	return (
 		<div>
-			{/*          event object                                       
-			                   |                      passing the event object
-			                   |                    "up the beanstalk" so it is
-							   |					in scope where the funciton
-						       |						is defined
-			                   |                             |          
-							   V							 V		    */}
-			<button onClick={ (e) => props.incrementFunction(e) }>
+               {/*         event object                                       
+                               |                     passing the event object
+                               |                    "up the beanstalk" so it is
+                               |                     in scope where the funciton
+                               |                           is defined
+                               |                             |
+                               V                             V              */}
+            <button onClick={ (e) => props.incrementFunction(e) }>
 				change number
 			</button>
 			<TheForm />
